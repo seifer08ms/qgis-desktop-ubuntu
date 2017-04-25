@@ -8,7 +8,7 @@ USER_NAME=`basename $HOME`
 
 # Users home is mounted as home
 # --rm will remove the container as soon as it ends
-docker run --rm \
+docker run --name=qgis \
     -i -t \
     -v ${HOME}:/home/${USER_NAME} \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
