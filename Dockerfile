@@ -28,6 +28,11 @@ RUN cp *.ttc /usr/share/fonts && cp *.ttf /usr/share/fonts && \
           apt-get -y update &&  apt-get install xfonts-utils -y fontconfig && \
          mkfontscale && mkfontdir && fc-cache
 
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8
+
 RUN    apt-get clean \
     && apt-get purge
 
