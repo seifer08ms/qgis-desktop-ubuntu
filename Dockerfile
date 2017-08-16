@@ -21,6 +21,13 @@ ADD python-mod.sh /python-mod.sh
 RUN chmod 0755 /python-mod.sh
 RUN /python-mod.sh
 
+# install chinese fonts  
+ADD win_fonts /tmp/win_fonts
+WORKDIR /tmp/win_fonts
+RUN cp *.ttc /usr/share/fonts && cp *.ttf /usr/share/fonts && \
+          apt-get -y update &&  apt-get install xfonts-utils -y fontconfig && \
+         mkfontscale && mkfontdir && fc-cache
+
 RUN    apt-get clean \
     && apt-get purge
 
