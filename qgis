@@ -12,7 +12,8 @@ docker run --name=qgis \
     -i -t \
     -v ${HOME}:/home/${USER_NAME} \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /tmp:/tmp/host \
     -e DISPLAY=unix$DISPLAY \
     -e HHHOME=${HOME} \
-    timcera/qgis-desktop-ubuntu:latest
+    seifer08ms/qgis-desktop-ubuntu:latest
 
